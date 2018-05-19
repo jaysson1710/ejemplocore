@@ -1,0 +1,2 @@
+language: csharp
+solution: WebApplication1/GmailNotifier.sln
