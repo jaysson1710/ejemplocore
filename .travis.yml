@@ -2,6 +2,7 @@ language: csharp
 mono: none
 dotnet: 2.0.0
 script:
+ # - cd WebApplication1
   - dotnet restore ./WebApplication1/
   - dotnet build ./WebApplication1/
 #  - dotnet build ./WebApplication1/WebApplication1/
