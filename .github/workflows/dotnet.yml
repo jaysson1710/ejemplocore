@@ -30,3 +30,18 @@ jobs:
         name: artifact
         path: ./WebApplication1/WebApplication1/output/
         if-no-files-found: error
+
+  download:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: download.env
+      url: https://abel-node-gh-accelerator.azurewebsites.net
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - name: Download artifact
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          # Required, workflow file name or ID
+          workflow: dotnet.yml
