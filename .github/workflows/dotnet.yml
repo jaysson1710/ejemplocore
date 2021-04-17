@@ -28,5 +28,5 @@ jobs:
       uses: actions/upload-artifact@v2.2.3
       with:
         name: artifact
-        path: ./output/
+        path: ${{secrets.PATH_UNO}}/output/
         if-no-files-found: error
