@@ -18,10 +18,15 @@ jobs:
       with:
         dotnet-version: 5.0.x
     - name: Restore dependencies
-      run: dotnet restore ./WebApplication1/ 
+      run: dotnet restore ${{secrets.PATH_UNO}} 
     - name: Build
-      run: dotnet build  ./WebApplication1/ --no-restore
-    - name: Test
-      run: dotnet test ./WebApplication1/  --no-build --verbosity normal
+      run: | 
+        dotnet build  ${{secrets.PATH_UNO}} --no-restore
+        dotnet publish ${{secrets.PATH_UNO}} --output ./output/ -p:PublishSingleFile=true
       
-  
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v2.2.3
+      with:
+        name: artifact
+        path: ./output/
+        if-no-files-found: error
