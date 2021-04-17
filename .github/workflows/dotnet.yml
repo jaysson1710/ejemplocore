@@ -9,7 +9,7 @@ on:
 jobs:
   build:
 
-    runs-on: self-hosted
+    runs-on: base
 
     steps:
     - uses: actions/checkout@v2
@@ -33,7 +33,7 @@ jobs:
 
   download:
     # The type of runner that the job will run on
-    runs-on: self-hosted
+    runs-on: base
     needs: build
     environment:
       name: download.env
