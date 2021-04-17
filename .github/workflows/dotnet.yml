@@ -28,5 +28,5 @@ jobs:
       uses: actions/upload-artifact@v2.2.3
       with:
         name: artifact
-        path: /WebApplication1/WebApplication1/output/
+        path: ./WebApplication1/WebApplication1/output/
         if-no-files-found: error
