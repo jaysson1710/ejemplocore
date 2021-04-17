@@ -22,7 +22,7 @@ jobs:
     - name: Build
       run: | 
         dotnet build  ${{secrets.PATH_UNO}} --no-restore
-        dotnet publish ${{secrets.PATH_UNO}} --output ./output/ 
+        dotnet publish ${{secrets.PATH_UNO}} --output ./output
       
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.3
